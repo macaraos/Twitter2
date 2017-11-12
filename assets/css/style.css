@@ -1,0 +1,97 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-image: url(../img/river_morning_sunrise_reflection_clouds_103734_2048x1152.jpg);
+	background-size: cover;
+	font-family: 'Anonymous Pro', monospace;
+	z-index: 100;
+}
+
+.cabecera{
+	background-color: #6AD2F3;
+	color: #fff;
+	text-align: center;
+	padding: 5px;
+}
+
+.contenedor{
+	width: 100%;
+	height: 625px;
+	background-color: transparent;
+}
+
+.submenu1{
+	background-color: #fff;
+	width: 500px;
+	height: 250px;
+	padding: 30px;
+	margin-top: 30px; 
+	margin-left: 90px;
+}
+
+h2{
+	padding-bottom: 30px;
+}
+
+h4{
+	padding-bottom: 40px;
+}
+
+h3{
+	color: #567689;
+	padding-top: 50px;
+}
+
+.submenu2{
+	width: 570px;
+	height: 300px;
+	background-color: #fff;
+	margin-left: 680px;
+	margin-top: -300px;
+	position: relative;
+}
+
+
+
+.txt{
+	width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    background-color: transparent;
+    resize: none;
+}
+
+
+button{
+	background-color: #6AD2F3;
+	color: #fff;
+	padding: 10px;
+	padding-right: 30px;
+	padding-left: 30px;
+	font-weight: bold;
+	margin-right: 400px;
+	margin-left: 30px;
+	margin-top: 30px;
+}
+
+#contador{
+	position: relative;
+}
+
+#cont{
+	background-color: #fff;
+}
+
+.cont2{
+	text-align: left;
+	bottom: 200px;
+	margin-left: 100px;
+	margin-right: 70px;
+	background-color: transparent;
+	position: relative;
+}
