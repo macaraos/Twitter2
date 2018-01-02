@@ -21,23 +21,31 @@ function rescatarMensaje(){
 		var cont = document.getElementById("cont");
 		var textTwo = document.createTextNode(comment);
 
-//Agregar hora del mensaje
-var fecha = new Date();
-var hora = fecha.getHours();
-var min = fecha.getUTCMinutes();
+//Agregando hora al mensaje
+var hora = new Date();
+var hr = hora.getHours();
+var min = minutes();
 
-function minDigits() {
-	min = fecha.getUTCMinutes();
+function minutes(){
+	min = hora.getUTCMinutes();
 	if(min < 10) {
-		return '0' + min;
+	return '0' + min;
 	} else {
 		return min;
+		}
 	}
-}
-//Div donde irá la hora
-var contenedorHora = document.createElement('div');
-contenedorHora.comment = hora + ':' + min;
-mensaje.insertBefore(contenedorHora,mensaje.childNodes[0]);
+//Creando nodo con formato de hora
+var formatoHora = document.createTextNode(hr + ":" + min);
+
+//Creamos variable que contenga la hora en un "p"
+var horaP = document.createElement("p");
+horaP.innerText = "hora: ";
+
+//Vinculando "p" a la hora
+horaP.appendChild(formatoHora);
+
+//Agregando hora al nuevo contenedor
+mensaje.appendChild(horaP);
 
 	//Dandole a cada padre su hijo
 	texto.appendChild(textTwo);
