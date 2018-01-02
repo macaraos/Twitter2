@@ -5,8 +5,8 @@ botonLlamar.addEventListener("click", rescatarMensaje);
 //Rescatando mensaje de ingreso
 function rescatarMensaje(){
 
-		var comment = document.getElementById("comment").value;
-		document.getElementById("comment").value = " ";
+	var comment = document.getElementById("comment").value;
+	document.getElementById("comment").value = " ";
 
 		//Llamando a boton
 		var btn = document.getElementById("btn");
@@ -21,11 +21,28 @@ function rescatarMensaje(){
 		var cont = document.getElementById("cont");
 		var textTwo = document.createTextNode(comment);
 
-		//Dandole a cada padre su hijo
-		texto.appendChild(textTwo);
-		mensaje.appendChild(texto);
-		cont.appendChild(mensaje);
+//Agregar hora del mensaje
+var fecha = new Date();
+var hora = fecha.getHours();
+var min = fecha.getUTCMinutes();
 
+function minDigits() {
+	min = fecha.getUTCMinutes();
+	if(min < 10) {
+		return '0' + min;
+	} else {
+		return min;
+	}
+}
+//Div donde irá la hora
+var contenedorHora = document.createElement('div');
+contenedorHora.comment = hora + ':' + min;
+mensaje.insertBefore(contenedorHora,mensaje.childNodes[0]);
+
+	//Dandole a cada padre su hijo
+	texto.appendChild(textTwo);
+	mensaje.appendChild(texto);
+	cont.appendChild(mensaje);
 }
 
 //Hacer que cada vez que se escriba, se cuenten los caracteres
@@ -52,12 +69,15 @@ function contador(){
 		}
 
 		//desactivar boton cuando no se ingresan caracteres o son superior a 140
-		if(caracteres == null || caracteres > 140){
+		if(caracteres === 0){
 			btn.disabled = true;
 		}
-		//Activar el boton cuando se ingresan caracteres superiores a 0 e inferiores a 140
-		if(caracteres > 0 || caracteres < 140){
-			btn.disabled = false;
-		}
+		else if(caracteres > 140){
+			btn.disabled = true;
+//En caso contrario activarlo
+}else{
+	btn.disabled = false;
+}
 
 }
+
